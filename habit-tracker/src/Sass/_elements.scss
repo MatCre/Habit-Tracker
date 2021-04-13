@@ -1,0 +1,41 @@
+html {
+    body {
+        font-family: $font;
+        color: white;
+    }
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+h1 {
+    font-size: $largeHeading;
+}
+
+h2 {
+    font-size: $mediumHeading;
+}
+
+h3 {
+    font-size: $smallHeading;
+}
+
+button {
+    outline-color: transparent;
+    border-radius: 50%;
+    transition: all 0.5s;
+    &:focus {
+        outline-style: none;
+    }
+    &:hover {
+        outline-color: transparent;
+        box-shadow: 0 0 0 2px black;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

@@ -1,0 +1,11 @@
+.myList {
+    list-style: none;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+}
+
+.listItem {
+    list-style: none;
+    flex: 1;
+}

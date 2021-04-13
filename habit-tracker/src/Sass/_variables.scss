@@ -1,3 +1,10 @@
-$font: sans-serif;
-$primary: #333;
-$secondary: #999;
+$niceYellow: '#F1E100';
+$font: "monospace";
+$niceBlue: '#1919E6';
+$largeHeading: 90px;
+$mediumHeading: 60px;
+$smallHeading: 40px;
+$primaryColor1: #857DDC;
+
+//First Box style with set wight height and background color
+$boxStyle1: 900px, 200px, $primaryColor1; 
