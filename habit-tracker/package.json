@@ -16,7 +16,8 @@
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
-    "serve": "^10.1.2"
+    "serve": "^10.1.2",
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "dev": "react-scripts start",
