@@ -9,6 +9,9 @@ export const theme = {
     niceBlue: '#1919E6'
 };
 
+const state = {
+    habits: {},
+}
 // const Card = styled.div`
 //     max-width: 350px;
 //     border: 5px solid ${props => props.theme.niceYellow};
@@ -39,6 +42,8 @@ export const theme = {
 const GlobalStyles = styled.div`
     font-family: ${props => props.theme.font};
     color: ${props => props.theme.niceBlue};
+    display: flex;
+    justify-content: center;
 `
 
 class App extends React.Component {

@@ -1,10 +1,13 @@
 $niceYellow: '#F1E100';
-$font: "monospace";
+$fontColor: '#11049F';
 $niceBlue: '#1919E6';
 $largeHeading: 90px;
 $mediumHeading: 60px;
 $smallHeading: 40px;
 $primaryColor1: #857DDC;
+$secondaryColor1: #C57EDD;
+$boxShadow1: 0 10px 6px -6px #777;
+$boxShadow2: 0 10px 4px 6px #777;
 
 //First Box style with set wight height and background color
 $boxStyle1: 900px, 200px, $primaryColor1; 

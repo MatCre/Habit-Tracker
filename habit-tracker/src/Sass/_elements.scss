@@ -1,7 +1,8 @@
+@import './variables';
+
 html {
     body {
-        font-family: $font;
-        color: white;
+        color: #7EB5DD;
     }
 }
 
@@ -24,9 +25,13 @@ h2 {
 
 h3 {
     font-size: $smallHeading;
+    color: white;
+    font-weight: 600;
+    text-shadow: black 1px 0 2px;
 }
 
 button {
+    background: lavenderblush;
     outline-color: transparent;
     border-radius: 50%;
     transition: all 0.5s;
@@ -36,6 +41,6 @@ button {
     &:hover {
         outline-color: transparent;
         box-shadow: 0 0 0 2px black;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: $secondaryColor1;
     }
 }
