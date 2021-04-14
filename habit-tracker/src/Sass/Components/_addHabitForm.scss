@@ -1,0 +1,15 @@
+.habit-form-edit {
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    padding: 5px;
+    min-height: 10vh;
+    textarea {
+        resize: none;
+    }
+    button {
+        margin: 10px;
+    }
+}
+

@@ -6,8 +6,10 @@ class HabitCard extends React.Component {
     render() {
         return (
             <div className="habit-wrapper">
-                <h3 className="habit-name">Brush Teeth</h3>
-                <img className="habit-image"src={Toothbrush} alt="a toothbrush"/>
+                <div className="habit-name-desc-wrap">
+                    <h3 className="habit-name">Brush Teeth</h3>
+                    <p className="habit-desc">Habit description</p>
+                </div>
                 <button className="habit-done">Done</button>
             </div>
         )
