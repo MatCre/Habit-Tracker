@@ -4,32 +4,29 @@ $border: 1px solid white;
 
 .habit-wrapper{
     // @include box($boxStyle1...);
-    border: 5px solid red;
     padding: 10px;
     border-radius: 5px 50px 50px 5px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 6px;
     align-items: center;
+    justify-content: center;
     box-shadow: $boxShadow1;
     background: linear-gradient($primaryColor1, $secondaryColor1);
+    overflow: hidden;
 
-}
-
-.habit-name-desc-wrap {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .habit-name {
-    flex: 2;
+    margin: 0;
     border-bottom: $border;
     padding: 2px;
     box-shadow: 0 5px 6px -6px black;
 }
 
 .habit-desc {
-    flex: 1;
+    grid-row: 2  / span 1;
     color: white;
 }
 // .habit-image {
@@ -45,8 +42,8 @@ $border: 1px solid white;
 //     box-shadow: 0 0 8px -2px whitesmoke;
 // }
 .habit-done {
-    flex: 1;
+    justify-self: center;
+    grid-row: span 2;
     padding: 10px;
-    margin: 10px;
-    border: $border;
+    border: none;
 }

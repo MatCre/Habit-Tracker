@@ -2,29 +2,31 @@
 @import "./elements";
 @import "./Components/listtemplate";
 
-*, *:before, *:after {
-    box-sizing: inherit;
-  }
-
 .habit-tracker {
-    display: flex;
-    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-height: 90vh;
     max-width: 2000px;
     margin: 0 auto;
     margin-top : 5vh;
 }
 
 .habit-tracker > * {
-    flex: 1 2 auto;
-    padding: 2rem;
+    padding: 1rem;
     border: 1rem double lighten(black,10%);
 }
 
 .habits {
-    height: 90vh;
-    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.habit-list {
+    overflow: scroll;
+    max-height: 50vh;
+}
 
 header.top {
     text-align: center;

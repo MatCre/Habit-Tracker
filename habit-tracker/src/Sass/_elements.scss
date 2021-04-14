@@ -7,6 +7,9 @@ html {
     }
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
 h2,
 h3,
 h4,
@@ -38,11 +41,14 @@ p {
 
 button {
     text-transform: uppercase;
-    font-weight: 400;
-    font-size: 1.5vw;
+    max-width: 300px;
+    max-height: 50px;
+    font-weight: 600;
+    font-size: 0.5vw;
+    padding: 20px;
     background: lavenderblush;
     outline-color: transparent;
-    border-radius: 3vw;
+    border-radius: 20px;
     &:focus {
         outline-style: none;
     }
