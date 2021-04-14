@@ -11,7 +11,9 @@ class HabitCard extends React.Component {
                 <h3 className="habit-name">{habitName}</h3>
                 <p className="habit-desc">{habitDesc}</p>
                 <div className="habit-done">
-                    <button className="habit-done-btn">Done</button>
+                    <button 
+                    className="habit-done-btn"
+                    onClick={() => this.props.addToHabitStack(this.props.index)}>Add To Stack</button>
                 </div>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Sass/Components/_habitStack.scss';
+import HabitCard from './HabitCard';
 
 class HabitStack extends React.Component {
     render() {
@@ -7,7 +8,6 @@ class HabitStack extends React.Component {
             <div className="stack-wrap">
                 <h2>Habit Stack</h2>
                 <ul className="habits">
-                    
                 </ul>
             </div>
         );
