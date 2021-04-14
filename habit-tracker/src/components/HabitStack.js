@@ -7,7 +7,7 @@ class HabitStack extends React.Component {
             <div className="stack-wrap">
                 <h2>Habit Stack</h2>
                 <ul className="habits">
-                    <li>Habit Stack</li>
+                    
                 </ul>
             </div>
         );
