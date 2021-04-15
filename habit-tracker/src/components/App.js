@@ -13,20 +13,22 @@ class App extends React.Component {
         habits: {},
         habitStack: {}
     }
+    // console.log()
+    // if(this.state.habitStack.hasOwnProperty(key)) {
+    //     return
+    // }
 
+    //0.5 update the text of the button to say 'done'
     addToHabitStack = (key) => {
-        console.log()
-        if(this.state.habitStack.hasOwnProperty(key)) {
-            return
-        }
-        //0.5 update the text of the button to say 'done'
+        const keyPassedIn = key
+        const theHabitIWantToAddToTheStack = {...this.state.habits[keyPassedIn]}
+        console.log(theHabitIWantToAddToTheStack);
         //1. take a copy of the state
         const habitStack = {...this.state.habitStack};
-        //2 Use the key to reference the habits in state and set that to the habitStack same key
-        habitStack[key] = this.state.habits[key];
-        //2.5 Set the added value to true
+        habitStack[key] = theHabitIWantToAddToTheStack;
         habitStack[key].added = true;
-        //3 call setstate to update the habitStack  state object
+        
+    
         this.setState({ habitStack })
         
     };
@@ -63,7 +65,7 @@ class App extends React.Component {
                     {Object.keys(this.state.habitStack).map(key =>
                         <HabitCard
                         key={key} 
-                        details={this.state.habits[key]}
+                        details={this.state.habitStack[key]}
                         index={key}
                         added={this.state.habitStack[key].added}
                         completeHabitInHabitStack={this.completeHabitInHabitStack}
