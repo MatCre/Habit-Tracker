@@ -13,22 +13,19 @@ class App extends React.Component {
         habits: {},
         habitStack: {}
     }
-    // console.log()
-    // if(this.state.habitStack.hasOwnProperty(key)) {
-    //     return
-    // }
 
-    //0.5 update the text of the button to say 'done'
     addToHabitStack = (key) => {
+        //This is the key passed in from a button element press
         const keyPassedIn = key
+        //This is a copy of the refrence of that key from the state where it exhists
         const theHabitIWantToAddToTheStack = {...this.state.habits[keyPassedIn]}
-        console.log(theHabitIWantToAddToTheStack);
-        //1. take a copy of the state
+        // Making a copy of the second state i have
         const habitStack = {...this.state.habitStack};
+        //setting the key to the matching habit i refrenced above
         habitStack[key] = theHabitIWantToAddToTheStack;
+        //setting the value to true in the new state (for dynamic text)
         habitStack[key].added = true;
-        
-    
+        //updating the second state with the new copy.
         this.setState({ habitStack })
         
     };
@@ -36,7 +33,9 @@ class App extends React.Component {
     completeHabitInHabitStack = (key) => {
         console.log(this.state.habitStack[key])
         //1. take a copy of the habitStack state
+        const habitStack = {...this.state.habitStack};
         //2. remove this habits [key] from that copy
+        
         //3. update the state of habit stack
     }
 
