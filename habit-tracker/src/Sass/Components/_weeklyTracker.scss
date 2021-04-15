@@ -1,0 +1,11 @@
+.week-prog-wrap {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1fr;
+    width: 30vw;
+    height: 10vh;
+}
+
+.week-prog-wrap > * {
+    border: 2px solid black;
+}
