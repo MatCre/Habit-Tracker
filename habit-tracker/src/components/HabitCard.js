@@ -34,7 +34,7 @@ class HabitCard extends React.Component {
                         if(added === false) {
                             this.props.addToHabitStack(this.props.index,)
                         } else {
-                            // this.props.completeHabitInHabitStack(this.props.index)
+                            this.props.completeHabitInHabitStack(this.props.index)
                         }
                                     }   
                             }

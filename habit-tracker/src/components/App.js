@@ -11,7 +11,8 @@ class App extends React.Component {
 
     state = {
         habits: {},
-        habitStack: {}
+        habitStack: {},
+        weeklyTrack: { dayCounter: [0,0,0,0,0,0,0]}
     }
 
     addToHabitStack = (key) => {
@@ -30,12 +31,22 @@ class App extends React.Component {
         
     };
 
+    updateCurrentDaysHabitCounter = () => {
+        //Get the day
+        const today = new Date(Date.now()).getDay();
+        console.log(today);
+        //Copy the state of weeklyTrack
+        const weeklyTrackCopy = {...this.state.weeklyTrack.dayCounter}
+        console.log(weeklyTrackCopy[0]);
+
+    }
+
     completeHabitInHabitStack = (key) => {
         console.log(this.state.habitStack[key])
         //1. take a copy of the habitStack state
         const habitStack = {...this.state.habitStack};
         //2. remove this habits [key] from that copy
-        
+        this.updateCurrentDaysHabitCounter();
         //3. update the state of habit stack
     }
 
@@ -71,7 +82,9 @@ class App extends React.Component {
                         />)}
                 </div>
                 <div className="tracker-wrapper">
-                    <WeeklyTracker />
+                    <WeeklyTracker
+                    weeklyTrack={this.state.weeklyTrack}
+                    />
                 </div>
             </div>
         )

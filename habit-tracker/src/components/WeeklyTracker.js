@@ -2,7 +2,12 @@ import React from 'react';
 import '../Sass/Components/_weeklyTracker.scss';
 
 class WeeklyTracker extends React.Component {
+
+
     render() {
+
+        const days = {...this.props.weeklyTrack.dayCounter}
+
         return (
             <div className="tracker-wrap">
                 <h2>Weekly Progress</h2>
@@ -14,13 +19,13 @@ class WeeklyTracker extends React.Component {
                         <div className="friday">Fri</div>
                         <div className="saturday">Sat</div>
                         <div className="sunday">Sun</div>
-                        <div id="day1" className="day-track"></div>
-                        <div id="day2" className="day-track"></div>
-                        <div id="day3" className="day-track"></div>
-                        <div id="day4" className="day-track"></div>
-                        <div id="day5" className="day-track"></div>
-                        <div id="day6" className="day-track"></div>
-                        <div id="day7" className="day-track"></div>
+                        <div id="day1" className="day-track"><span>{(days[0])}</span></div>
+                        <div id="day2" className="day-track"><span>{(days[1])}</span></div>
+                        <div id="day3" className="day-track"><span>{(days[2])}</span></div>
+                        <div id="day4" className="day-track"><span>{(days[3])}</span></div>
+                        <div id="day5" className="day-track"><span>{(days[4])}</span></div>
+                        <div id="day6" className="day-track"><span>{(days[5])}</span></div>
+                        <div id="day7" className="day-track"><span>{(days[6])}</span></div>
                 </div>
             </div>
         )
