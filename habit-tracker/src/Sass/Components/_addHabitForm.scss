@@ -1,11 +1,16 @@
 .habit-form-edit {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 5px;
     min-height: 10vh;
+    input {
+        align-self: flex-start;
+    }
     textarea {
         resize: none;
+        margin: 2px;
+        width: 15vw;
     }
     button {
         margin: 10px;

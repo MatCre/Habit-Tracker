@@ -12,8 +12,15 @@ class App extends React.Component {
     state = {
         habits: {},
         habitStack: {},
-        weeklyTrack: [0,0,0,0,0,0,0]
+        weeklyTrack: {Sun: 0,
+            Mon: 0,
+            Tue: 0,
+            Wed: 0,
+            Thu: 0,
+            Fri: 0,
+            Sat: 0
     }
+}
 
     componentDidMount() {
         const localStorageRef1 = localStorage.getItem('habitStack');
@@ -30,6 +37,21 @@ class App extends React.Component {
 
         localStorage.setItem('habitStack', JSON.stringify(this.state.habitStack));
         localStorage.setItem('weeklyTrack', JSON.stringify(this.state.weeklyTrack));
+    }
+
+    addHabit = (habit) => {
+        //1. Take a copy of the exhisting state
+        const habits = {...this.state.habits};
+        //2. Add our new habit to that variable
+        habits[`habit${Date.now()}`] = habit;
+        //3. set the new fishes object to state
+        this.setState({habits,})
+    }
+
+    removeHabit = (key) => {
+        const habits = {...this.state.habits};
+        delete habits[key];
+        this.setState({habits})
     }
 
     addToHabitStack = (key) => {
@@ -54,16 +76,36 @@ class App extends React.Component {
         //Copy the state of weeklyTrack
         const weeklyTrack = {...this.state.weeklyTrack}
         //Get the value of the array value i want to incremenet
-        let valueToIncrement = weeklyTrack[today];
+        let day;
+        switch (today) {
+            case 0:
+              day = "Sun";
+              break;
+            case 1:
+              day = "Mon";
+              break;
+            case 2:
+               day = "Tue";
+              break;
+            case 3:
+              day = "Wed";
+              break;
+            case 4:
+              day = "Thu";
+              break;
+            case 5:
+              day = "Fri";
+              break;
+            case 6:
+              day = "Sat";
+          }
+        let valueToIncrement = weeklyTrack[day];
         //Increment that value
         valueToIncrement ++
         //Set todays value to that incremented value 
-        weeklyTrack[today] = valueToIncrement;
+        weeklyTrack[day] = valueToIncrement;
         //Set the state of weekly track to the new values.
         this.setState({ weeklyTrack })
-
-
-
     }
 
     completeHabitInHabitStack = (key) => {
@@ -93,12 +135,14 @@ class App extends React.Component {
                         key={key} 
                         details={this.state.habits[key]}
                         addToHabitStack={this.addToHabitStack}
+                        removeHabit={this.removeHabit}
                         index={key}
                         />)}
                     </ul>
-                    <AddHabitForm />
+                    <AddHabitForm addHabit={this.addHabit}/>
                 </div>
                 <div className="stack-wrap"> 
+                        <h2>Habit Stack</h2>
                     {Object.keys(this.state.habitStack).map(key =>
                         <HabitCard
                         key={key} 

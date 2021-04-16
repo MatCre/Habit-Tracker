@@ -40,6 +40,7 @@ class HabitCard extends React.Component {
                             }
                     ref={this.buttonTextRef}
                             ></button>
+                            <button className="delete-habit" onClick={() => this.props.removeHabit(this.props.index)}>Remove</button>
 
                 </div>
             </div>

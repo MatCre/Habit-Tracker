@@ -1,9 +1,21 @@
 .week-prog-wrap {
     display: grid;
+    align-content: space-between;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1f;
     width: 30vw;
     height: 10vh;
+}
+
+.day-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vhpx;
+    span {
+        display: block;
+        text-align: center;
+        height: 10vh;
+    }
 }
 
 .week-prog-wrap > * {
