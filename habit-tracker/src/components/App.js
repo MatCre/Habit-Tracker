@@ -12,7 +12,24 @@ class App extends React.Component {
     state = {
         habits: {},
         habitStack: {},
-        weeklyTrack: { dayCounter: [0,0,0,0,0,0,0]}
+        weeklyTrack: [0,0,0,0,0,0,0]
+    }
+
+    componentDidMount() {
+        const localStorageRef1 = localStorage.getItem('habitStack');
+        const localStorageRef2 = localStorage.getItem('weeklyTrack');
+        if(localStorageRef1) {
+            this.setState({habitStack: JSON.parse(localStorageRef1)});
+        }
+        if(localStorageRef2) {
+            this.setState({weeklyTrack: JSON.parse(localStorageRef2)});
+        }
+    }
+
+    componentDidUpdate() { 
+
+        localStorage.setItem('habitStack', JSON.stringify(this.state.habitStack));
+        localStorage.setItem('weeklyTrack', JSON.stringify(this.state.weeklyTrack));
     }
 
     addToHabitStack = (key) => {
@@ -28,26 +45,36 @@ class App extends React.Component {
         habitStack[key].added = true;
         //updating the second state with the new copy.
         this.setState({ habitStack })
-        
+
     };
 
     updateCurrentDaysHabitCounter = () => {
         //Get the day
         const today = new Date(Date.now()).getDay();
-        console.log(today);
         //Copy the state of weeklyTrack
-        const weeklyTrackCopy = {...this.state.weeklyTrack.dayCounter}
-        console.log(weeklyTrackCopy[0]);
+        const weeklyTrack = {...this.state.weeklyTrack}
+        //Get the value of the array value i want to incremenet
+        let valueToIncrement = weeklyTrack[today];
+        //Increment that value
+        valueToIncrement ++
+        //Set todays value to that incremented value 
+        weeklyTrack[today] = valueToIncrement;
+        //Set the state of weekly track to the new values.
+        this.setState({ weeklyTrack })
+
+
 
     }
 
     completeHabitInHabitStack = (key) => {
-        console.log(this.state.habitStack[key])
         //1. take a copy of the habitStack state
         const habitStack = {...this.state.habitStack};
-        //2. remove this habits [key] from that copy
+        //increment today habit counter
         this.updateCurrentDaysHabitCounter();
+        //2. remove this habits [key] from that copy
+        delete habitStack[key]
         //3. update the state of habit stack
+        this.setState({habitStack});
     }
 
     loadSampleHabits = () => {
