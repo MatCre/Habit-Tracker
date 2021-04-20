@@ -1,51 +1,37 @@
-@import '../mixins';
-@import '../variables';
+@import "../mixins";
+@import "../variables";
 $border: 1px solid white;
 
-.habit-wrapper{
-    // @include box($boxStyle1...);
-    padding: 10px;
-    border-radius: 5px 50px 50px 5px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-bottom: 6px;
-    align-items: center;
-    justify-content: center;
-    box-shadow: $boxShadow1;
-    // background: linear-gradient($primaryColor1, $secondaryColor1);
-    overflow: hidden;
-    border-top: 1px solid black;
-    border-left: 2px solid black;
-
+.habit-wrapper {
+  // @include box($boxStyle1...);
+  padding: 10px 20px;
+  border-radius: 1em/5em;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+  border-top: 1px solid #999;
+  justify-content: center;
+  box-shadow: $boxShadow1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  button {
+    margin: 2px;
+  }
 }
 
 .habit-name {
-    margin: 0;
-    border-bottom: $border;
-    padding: 2px;
-    box-shadow: 0 5px 6px -6px black;
+  margin: 0;
+  border-bottom: $border;
+  padding: 2px;
+  box-shadow: 0 5px 6px -6px black;
 }
 
 .habit-desc {
-    grid-row: 2  / span 1;
-    color: $primaryColor1;
+  color: $primaryColor1;
 }
-// .habit-image {
-//     flex: 1 2 auto;
-//     width: 2vw;
-//     max-width: 40px;
-//     height: 2vh;
-//     max-height: 40px;
-//     background-color: lavenderblush;
-//     padding: 20px;
-//     border-radius: 15px;
-//     border: 2px solid grey;
-//     box-shadow: 0 0 8px -2px whitesmoke;
-// }
+
 .habit-done {
-    justify-self: center;
-    grid-row: span 2;
-    padding: 10px;
-    border: none;
+  padding: 10px;
+  border: none;
 }

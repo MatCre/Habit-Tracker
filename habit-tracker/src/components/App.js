@@ -48,10 +48,17 @@ class App extends React.Component {
         this.setState({habits,})
     }
 
-    removeHabit = (key) => {
-        const habits = {...this.state.habits};
-        delete habits[key];
-        this.setState({habits})
+    removeHabit = (key, e) => {
+       if(e.currentTarget.closest("main > div").className === "habits") {
+           const habits = {...this.state.habits};
+           delete habits[key];
+           this.setState({ habits })
+       } else {
+           const habitStack = {...this.state.habitStack};
+           delete habitStack[key];
+           this.setState({ habitStack });
+       }
+
     }
 
     addToHabitStack = (key) => {
@@ -126,8 +133,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="habit-tracker">
-                <div className="habits">
+            <main className="habit-tracker">
+                <div className="habits" id="01">
                     <Header loadSampleHabits={this.loadSampleHabits}/>
                     <ul className="habit-list">
                       {Object.keys(this.state.habits).map(key =>
@@ -141,7 +148,7 @@ class App extends React.Component {
                     </ul>
                     <AddHabitForm addHabit={this.addHabit}/>
                 </div>
-                <div className="stack-wrap"> 
+                <div className="stack-wrap" id="02"> 
                         <h2>Habit Stack</h2>
                     {Object.keys(this.state.habitStack).map(key =>
                         <HabitCard
@@ -150,6 +157,7 @@ class App extends React.Component {
                         index={key}
                         added={this.state.habitStack[key].added}
                         completeHabitInHabitStack={this.completeHabitInHabitStack}
+                        removeHabit={this.removeHabit}
                         />)}
                 </div>
                 <div className="tracker-wrapper">
@@ -157,7 +165,7 @@ class App extends React.Component {
                     weeklyTrack={this.state.weeklyTrack}
                     />
                 </div>
-            </div>
+            </main>
         )
     }
 }

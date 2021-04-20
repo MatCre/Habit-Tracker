@@ -1,15 +1,17 @@
-@import './variables';
+@import "./variables";
 
 html {
-    box-sizing: border-box;
-    body {
-        color: #7EB5DD;
-    }
+  box-sizing: border-box;
+  body {
+    color: #7eb5dd;
+  }
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 h2,
 h3,
 h4,
@@ -20,41 +22,45 @@ h6 {
 }
 
 h1 {
-    font-size: $largeHeading;
+  font-size: $largeHeading;
+  font-weight: 700;
 }
 
 h2 {
-    font-size: 3vw;
-    text-align: center;
+  font-size: 3vw;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-align: center;
 }
 
 h3 {
-    font-size: 1.5vw;
-    color: $secondaryColor1;
-    font-weight: 600;
-    text-shadow: black 1px 0 2px;
+  font-size: 1.5vw;
+  color: $secondaryColor1;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-shadow: black -1px 2px 1px;
 }
 
 p {
-    font-size: 0.9vw;
+  font-size: 0.9vw;
 }
 
 button {
-    text-transform: uppercase;
-    max-width: 300px;
-    max-height: 50px;
-    font-weight: 600;
-    font-size: 0.5vw;
-    padding: 20px;
-    background: lavenderblush;
+  text-transform: uppercase;
+  max-width: 300px;
+  max-height: 50px;
+  font-weight: 600;
+  font-size: 0.5vw;
+  padding: 20px;
+  background: lavenderblush;
+  outline-color: transparent;
+  border-radius: 20px;
+  &:focus {
+    outline-style: none;
+  }
+  &:hover {
     outline-color: transparent;
-    border-radius: 20px;
-    &:focus {
-        outline-style: none;
-    }
-    &:hover {
-        outline-color: transparent;
-        box-shadow: 0 0 0 2px black;
-        background-color: $secondaryColor1;
-    }
+    box-shadow: 0 0 0 2px black;
+    background-color: $secondaryColor1;
+  }
 }
